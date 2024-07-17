@@ -1,11 +1,15 @@
 body{
     background-color: #FEA498;
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .tomacus-container{
     width: 300px;
-    margin: 50px auto;
+    position: relative;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
