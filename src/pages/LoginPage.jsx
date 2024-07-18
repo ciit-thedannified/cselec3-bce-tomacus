@@ -21,10 +21,14 @@ export default function LoginPage() {
         console.log ('Password', password)
     };
 
-    return (
+    return ( 
     <div className='tomacus-container'>
+        <div className='image-container'>
+            <img className='tomato-image' src='src/assets/tomato4.png'></img>
+            <img className='leaves-image' src='src/assets/leaves.png'></img>
+        </div>
         <h1>TOMACUS</h1>
-        <h2>Login</h2>
+        <h2>Login</h2> 
         <form onSubmit={handleSubmit}>
          <div className='input-group'>
             <label>Email</label>

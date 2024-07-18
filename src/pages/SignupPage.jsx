@@ -10,6 +10,10 @@ import '../css/Register.css';
 export default function SignupPage() {
     return (
         <div className="register-container">
+        <div className='image-container'>
+            <img className='tomato-image-reg' src='src/assets/tomato4.png'></img>
+            <img className='leaves-image-reg' src='src/assets/leaves.png'></img>
+        </div>
         <h1>TOMACUS</h1>
         <h2>Registration</h2>
         <form>

@@ -1,21 +1,65 @@
-body{
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #ffcccc;
-}
-
 .register-container{
-    background: linear-gradient(to bottom, #ffcccc 50%, #c5e1a5 50%);
-    width: 100vw;
-    height: 100vh;
+    background-color: #d52323;
+    width: 430px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px;
     box-sizing: border-box;
+    box-shadow: 0 6px 20px 4px rgba(0, 0, 0, 0.4);
+    font-family: font1;
 }
 
+.tomato-image-reg{
+    width: 200px;
+    height: auto;
+    position:fixed;
+    left: 33%;
+    top: 15%;
+    float: left;
+}
+
+.leaves-image-reg{
+    width: 200px;
+    rotate: 120deg;
+    height: auto;
+    position:fixed;
+    left: 58%;
+    top: 75%;
+    float: left;
+}
+
+.input-container{
+    margin-bottom: 15px;
+    transition: 0.5s;
+}
+
+.input-container label{
+    display: block;
+    text-align: left;
+    color: #fd966d;
+    font-weight: bold; 
+    margin-bottom: 5px;
+}
+
+.input-container input{
+    width: 380px;
+    padding: 10px;
+    border: 2px solid #fd966d;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #8b0000;
+}
+
+h2{
+    font-size: 2rem;
+    color: #fd966d;
+    margin: 10px 0;
+    text-align: center;
+
+}
+/*
 h1{
     font-size: 3rem;
     color: #b30000;
@@ -104,3 +148,4 @@ a{
 a:hover{
     text-decoration: underline;
 }
+*/
