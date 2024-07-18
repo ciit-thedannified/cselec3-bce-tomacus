@@ -5,6 +5,7 @@
 
 import '../css/LoginPages.css';
 import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 
 
 export default function LoginPage() {
@@ -20,10 +21,14 @@ export default function LoginPage() {
         console.log ('Password', password)
     };
 
-    return (
+    return ( 
     <div className='tomacus-container'>
+        <div className='image-container'>
+            <img className='tomato-image' src='src/assets/tomato4.png'></img>
+            <img className='leaves-image' src='src/assets/leaves.png'></img>
+        </div>
         <h1>TOMACUS</h1>
-        <h2>Login</h2>
+        <h2>Login</h2> 
         <form onSubmit={handleSubmit}>
          <div className='input-group'>
             <label>Email</label>
@@ -37,7 +42,7 @@ export default function LoginPage() {
             <button type="submit">Login</button>
         </form>
         <p>
-            Don't have an account? <a href='/register'>Create one!</a>
+            Don't have an account? <Link to='/register'>Create one!</Link>
         </p>
     </div>
   );
