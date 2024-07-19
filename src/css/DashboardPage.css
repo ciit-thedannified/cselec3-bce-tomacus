@@ -4,15 +4,23 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: font1;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .nav{
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #ff9c9c;
+    background-color: #d52323;
     color:white;
+    box-shadow: 0 6px 20px 4px rgba(0, 0, 0, 0.4);
+}
+
+.container-fluid{
+    width: 100vw;
+    height: 100vh;
 }
 
 .logo{
@@ -22,16 +30,24 @@
     align-items: center;
 }
 
-/* Insert images here*/
+.tomato-logo{
+    width: 40px;
+    height: auto;
+}
 
 .menu{
     display: flex;
+    margin-left: auto;
 }
 
 .menu span{
     margin: 0 10px;
     cursor: pointer;
+    transition: 0.25s;
+}
 
+.menu span:hover{ 
+    color: #fd966d;
 }
 
 .content{
@@ -40,16 +56,16 @@
 }
 
 .sidebar{
-    background-color: #ffe68e;
+    background-color: #701111;
     padding: 20px;
-    height: calc(96.1vh - 60px);
-    flex: 0 0 33.33%;
-
-
+    height: 90vh;
+    flex: 0 0 33.33%; 
+    width: 30vw;
+    box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.4) inset;
 }
 
 .pomodoro-list{
-    background-color: #fff5f5;
+    background-color: #f3f3f3;
     border-radius: 10px;
     padding: 15px;
 }
@@ -59,36 +75,44 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-    color: black;
+    color: #ff4d4d;
     font-weight: bold;
+    font-size: 25px;
 }
 
 .add-btn{
-    background-color: #ff9c9c;
+    background-color: #d52323;
     border: none;
     border-radius: 50%;
-    width: 30px;
+    width: 50px;
+    height: 50px;
+    padding-left: 20px;
     color: white;
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
+    text-align: center;
+    transition: 0.25s;
 }
 
 .pomodoro-item{
-    background-color: #ffb3b3;
+    background-color: #d52323;
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 5px;
-}
+    box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.4);
+} 
 
 .interface{
     background-color: #ffd4d4;
     padding: 20px;
-    height: calc(96.1vh - 60px);
+    height: 90vh;
+    width: 66vw;
     display: flex;
     flex: 1;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.4) inset;
 }
 
 .buttons{
@@ -99,7 +123,7 @@
 }
 
 .buttons button{
-    background-color: #ff9c9c;
+    background-color: #d52323;
     border: none;
     border-radius: 20px;
     padding: 10px 20px;
@@ -107,6 +131,12 @@
     font-size: 16px;
     cursor: pointer;
     margin: 0 10px;
+    transition: 0.25s;
+}
+
+.buttons button:hover{
+    background-color: #fd966d;
+    color: #d52323;
 }
 
 .short-break-btn, .long-break-btn{
@@ -122,8 +152,8 @@
 }
 
 .circle{
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
     background-color: #ff4d4d;
     border-radius: 50%;
     display: flex;

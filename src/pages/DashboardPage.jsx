@@ -15,6 +15,7 @@ export default function DashboardPage() {
                 <div className="col-12">
                     {/* [SECTION] Navigation bar */}
                     <div className="nav">
+                        <img className="tomato-logo" src="src/assets/tomato4.png"></img>
                         <div className="logo"> TOMACUS</div>
                         <div className="menu">
                             <span>SCHEDULES</span>
@@ -35,7 +36,7 @@ export default function DashboardPage() {
                                 <button className="add-btn">+</button>
                             </div>
                             <div className="pomodoro-item">
-                                <span>Schedule #1 cook a food 30:00</span>
+                                <span>Schedule #1 cook a food 30:00</span> 
                             </div>
                         </div>
                     </div>
@@ -43,20 +44,7 @@ export default function DashboardPage() {
 
                 <div className="col-8">
                     {/* [SECTION] Interface, outlet */}
-                    <div className="interface">
-                        <div className="buttons">
-                            <button className="tomacus-btn">TOMACUS</button>
-                            <button className="short-break-btn">Short Break</button>
-                            <button className="long-break-btn">Long Break</button>
-                        </div>
-                        <div className="timer">
-                            <div className="circle">
-                                <span className="time">25:00</span>
-                                <span className="settings">Settings</span>
-                            </div>
-                        </div>
                         <Outlet />
-                    </div>
                 </div>
             </div>
         </div>
