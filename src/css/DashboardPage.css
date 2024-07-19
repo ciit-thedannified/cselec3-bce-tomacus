@@ -169,10 +169,23 @@
     font-size: 50px;
 }
 
+.start-pause-btn, .reset-btn{
+    background-color: #d52323;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.25s;
+    max-width: 100px;
+}
+
+
 .settings {
     font-size: 20px;
     position: absolute;
     bottom: 10px;
-
 }
 

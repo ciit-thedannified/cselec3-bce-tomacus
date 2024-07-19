@@ -1,0 +1,61 @@
+.schedule-card{
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container{
+    width: 100%;
+}
+
+.card-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+
+}
+
+.col{
+    flex:1;
+    text-align: left;
+}
+
+.kebab-col{
+    position: relative;
+    text-align: right;
+}
+
+
+.schedule-title{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.kebab-icon{
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.kebab-menu{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #d65050;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.kebabed{
+    padding: 8px 16px;
+    cursor: pointer;
+    color: greenyellow;
+}
+
+.kebabed:hover{
+    background: #f0f0f0;
+}
