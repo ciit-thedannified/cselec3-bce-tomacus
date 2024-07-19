@@ -7,6 +7,7 @@
  */
 import {Outlet} from "react-router-dom";
 import '../css/DashboardPage.css'
+import ScheduleCard from "../components/ScheduleCard";
 
 export default function DashboardPage() {
     return (
@@ -36,8 +37,14 @@ export default function DashboardPage() {
                                 <button className="add-btn">+</button>
                             </div>
                             <div className="pomodoro-item">
-                                <span>Schedule #1 cook a food 30:00</span> 
+                                <ScheduleCard/>
                             </div>
+                            <div className="pomodoro-item">
+                                <ScheduleCard/>
+                            </div>
+                            <div className="pomodoro-item">
+                                <ScheduleCard/>
+                            </div>               
                         </div>
                     </div>
                 </div>
