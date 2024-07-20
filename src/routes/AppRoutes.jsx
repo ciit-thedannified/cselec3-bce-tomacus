@@ -4,6 +4,8 @@ import DashboardPage from "../pages/DashboardPage.jsx";
 import ScheduleInterface from "../components/ScheduleInterface.jsx";
 import LoginPage from "../pages/LoginPage.jsx";
 import SignupPage from "../pages/SignupPage.jsx";
+import ScheduleSettings from "../components/ScheduleSettings.jsx";
+import ProfilePage from "../pages/ProfilePage.jsx";
 
 const AppRoutes = createBrowserRouter([
     {
@@ -38,15 +40,15 @@ const AppRoutes = createBrowserRouter([
             },
             {
                 path: "/dashboard/schedule/new",
-                // element: <ScheduleSettings />
+                element: <ScheduleSettings editMode={false} />
             },
             {
                 path: "/dashboard/schedule/edit/:scheduleId",
-                // element: <ScheduleSettings />
+                element: <ScheduleSettings editMode={true} />
             },
             {
-                path: "/dashboard/profile"
-                // element: <ProfilePage />
+                path: "/dashboard/profile",
+                element: <ProfilePage />
             }
         ]
     }
