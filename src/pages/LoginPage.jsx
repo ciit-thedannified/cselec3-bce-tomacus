@@ -4,46 +4,67 @@
  */
 
 import '../css/LoginPages.css';
-import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
+import {useEffect, useState} from 'react';
+import {Link, useNavigate} from 'react-router-dom';
+import {loginUser} from "../services/AuthServices.js";
+import {UserAuth} from "../contexts/UserContext.jsx";
 
 
 export default function LoginPage() {
 
-    const[email, setEmail] = useState ('');
-    const[password, setPassword] = useState('');
+    const navigate = useNavigate();
+
+    const { currentUser } = UserAuth();
+
+    const [email, setEmail] = useState ('');
+    const [password, setPassword] = useState('');
 
 
-    const handleSubmit = (event) => {
+    async function handleLoginUser(event) {
         event.preventDefault();
 
-        console.log ('Email', email);
-        console.log ('Password', password)
-    };
+        try {
+            await loginUser(email, password)
+                .then(() => {
+                    navigate('/dashboard');
+                })
+        }
+        catch (e) {
+            console.error(e);
+        }
+    }
 
-    return ( 
-    <div className='tomacus-container'>
-        <div className='image-container'>
-            <img className='tomato-image' src='src/assets/tomato4.png'></img>
-            <img className='leaves-image' src='src/assets/leaves.png'></img>
+
+    useEffect(() => {
+        if (currentUser)
+            navigate('/dashboard')
+    }, [currentUser]);
+
+    return (
+    <div className="tomacus-body">
+        <div className='tomacus-container'>
+            <div className='image-container'>
+                <img className='tomato-image' src='src/assets/tomato4.png'></img>
+                <img className='leaves-image' src='src/assets/leaves.png'></img>
+            </div>
+            <h1>TOMACUS</h1>
+            <h2>Login</h2>
+            <form onSubmit={handleLoginUser}>
+                <div className='input-group'>
+                    <label>Email</label>
+                    <input type='email' value={email} onChange={(event) => setEmail(event.target.value)} required/>
+                </div>
+
+                <div className='input-group'>
+                    <label>Password</label>
+                    <input type='password' value={password} onChange={(event) => setPassword(event.target.value)} required/>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p>
+                Don't have an account? <Link to='/register'>Create one!</Link>
+            </p>
         </div>
-        <h1>TOMACUS</h1>
-        <h2>Login</h2> 
-        <form onSubmit={handleSubmit}>
-         <div className='input-group'>
-            <label>Email</label>
-            <input type='email' value={email} onChange={(event) => setEmail(event.target.value)} required/>
-            </div>
-
-            <div className='input-group'>
-                <label>Password</label>
-                <input type='password' value={password} onChange={(event) => setPassword(event.target.value)} required/>  
-            </div>
-            <button type="submit">Login</button>
-        </form>
-        <p>
-            Don't have an account? <Link to='/register'>Create one!</Link>
-        </p>
     </div>
   );
     
