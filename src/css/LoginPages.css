@@ -1,0 +1,121 @@
+body{
+    background-color: #d65050;
+    /*background-image: url(realtomato.png);*/
+	background-size: 235px 235px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+} 
+
+@font-face {
+    font-family: font1;
+    src: url(src/assets/CUBANO.TTF);
+}
+
+.tomato-image{
+    width: 200px;
+    height: auto;
+    position:fixed;
+    left: 33%;
+    top: 24%;
+    float: left;
+}
+
+.leaves-image{
+    width: 200px;
+    rotate: 120deg;
+    height: auto;
+    position:fixed;
+    left: 58%;
+    top: 65%;
+    float: left;
+}
+
+.tomacus-container{
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px 4px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    background-color: #d52323;
+    font-family: font1;
+} 
+
+h1{
+    margin-bottom: 20px;
+    color: #eeeeee;   
+}
+
+h2{
+    margin-bottom: 20px;
+    color: #fd966d;
+}
+
+.input-group{
+    margin-bottom: 15px;
+    transition: 0.5s;
+}
+
+.input-group label{
+    display: block;
+    text-align: left;
+    color: #fd966d;
+    font-weight: bold; 
+    margin-bottom: 5px;
+}
+
+.input-group input{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #fd966d;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #8b0000;
+}
+
+button{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fd966d;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+button:hover{
+    background-color: #fd966d;
+    color: #d52323;
+}
+
+p{
+    color: #8b0000;
+    margin-top: 15px;
+}
+
+a{
+   color:#8b0000;
+   text-decoration: none;
+   font-weight: bold;
+   transition: 0.5s;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+/* Add any if you wish (background:url())image of Tomatoes for bg*/
+
+.tomacus-container{
+    background-color: #d52323;
+}
+
+@media (min-width: 768px){
+    .tomacus-container{
+        width: 400px;
+    }
+}
