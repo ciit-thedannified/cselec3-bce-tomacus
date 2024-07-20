@@ -1,6 +1,5 @@
 import {UserAuth} from "../contexts/UserContext.jsx";
 import {useNavigate} from "react-router-dom";
-import {deleteUser} from "firebase/auth";
 import {terminateUser} from "../services/AuthServices.js";
 
 
@@ -48,7 +47,7 @@ export default function ProfilePage() {
                     <label> Username: {username} </label>
                 </div>
                 <div className="input-group">
-                    <label> E-mail: {currentUser.email} </label>
+                    <label> E-mail: {currentUser === null ? "" : currentUser.email} </label>
                 </div>
                 <div className="input-group">
                     <button onClick={handleLogout}> LOG OUT</button>

@@ -11,8 +11,8 @@
 import {useEffect, useRef, useState} from "react";
 import {FaEllipsisV} from 'react-icons/fa';
 import '../css/ScheduleCard.css';
-import {Link, useNavigate} from "react-router-dom";
-import {doc, getDoc, onSnapshot} from "firebase/firestore";
+import {useLocation, useNavigate} from "react-router-dom";
+import {doc, onSnapshot} from "firebase/firestore";
 import {Database} from "../firebase/firebase.config.js";
 import {deletePomodoroSchedule} from "../services/ScheduleServices.js";
 
@@ -25,6 +25,7 @@ export default function ScheduleCard({ID = 'id'}) {
     const [description, setDescription] = useState('Schedule Description');
 
     const navigate = useNavigate();
+    const location = useLocation();
 
     function handleCardClick(event) {
         // TODO: Implement handleCardClick
@@ -50,7 +51,10 @@ export default function ScheduleCard({ID = 'id'}) {
     async function handleDeleteClick(event){
         event.stopPropagation();
         setShowOptions(false);
-        await deletePomodoroSchedule(id);
+        await deletePomodoroSchedule(id)
+            .then(() => {
+                if (location.pathname === `/dashboard/schedule/${id}`) navigate('/dashboard/');
+            });
     }
 
     // SUBJECT TO CHANGE

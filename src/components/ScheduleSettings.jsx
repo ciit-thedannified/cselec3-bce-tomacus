@@ -40,8 +40,9 @@ export default function ScheduleSettings({editMode}) {
         }
 
         await addPomodoroSchedule(currentUser.uid, data)
-            .then(() => {
-                navigate(`/dashboard/schedule/${scheduleId}`);
+            .then(document => {
+                console.log(`New schedule added: ${document.id}`);
+                navigate(`/dashboard/schedule/${document.id}`);
             })
     }
 
