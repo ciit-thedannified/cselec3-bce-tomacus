@@ -1,7 +1,6 @@
 import {UserAuth} from "../contexts/UserContext.jsx";
 import {useNavigate} from "react-router-dom";
 import {terminateUser} from "../services/AuthServices.js";
-import {useEffect} from "react";
 
 
 export default function ProfilePage() {

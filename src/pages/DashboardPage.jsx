@@ -12,7 +12,8 @@ import {UserAuth} from "../contexts/UserContext.jsx";
 import {useEffect, useState} from "react";
 import {collection, query, where, onSnapshot} from "firebase/firestore";
 import {Database} from "../firebase/firebase.config.js";
-import {addPomodoroSchedule} from "../services/ScheduleServices.js";
+
+import TomatoIcon from "../assets/tomato4.png";
 
 export default function DashboardPage() {
 
@@ -63,7 +64,7 @@ export default function DashboardPage() {
                 <div className="col-12">
                     {/* [SECTION] Navigation bar */}
                     <div className="nav">
-                        <img className="tomato-logo" src="src/assets/tomato4.png"></img>
+                        <img className="tomato-logo" src={TomatoIcon}></img>
                         <div className="logo"> TOMACUS</div>
                         <div className="menu">
                             <span><Link to="/dashboard">SCHEDULES</Link></span>

@@ -3,12 +3,15 @@
  *          You may use any assets you see fit for this page component.
  */
 
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {Link, useNavigate} from 'react-router-dom';
 import '../css/Register.css';
 import {UserAuth} from "../contexts/UserContext.jsx";
 import {doc, setDoc} from "firebase/firestore"
 import {Database} from "../firebase/firebase.config.js";
+
+import TomatoIcon from "../assets/tomato4.png";
+import LeavesIcon from "../assets/leaves.png";
 
 export default function SignupPage() {
 
@@ -51,8 +54,8 @@ export default function SignupPage() {
     return (
         <div className="register-container">
         <div className='image-container'>
-            <img className='tomato-image-reg' src='src/assets/tomato4.png'></img>
-            <img className='leaves-image-reg' src='src/assets/leaves.png'></img>
+            <img className='tomato-image-reg' src={TomatoIcon}></img>
+            <img className='leaves-image-reg' src={LeavesIcon}></img>
         </div>
         <h1>TOMACUS</h1>
         <h2>Registration</h2>

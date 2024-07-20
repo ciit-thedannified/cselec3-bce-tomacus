@@ -8,7 +8,8 @@ import {useEffect, useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import {loginUser} from "../services/AuthServices.js";
 import {UserAuth} from "../contexts/UserContext.jsx";
-
+import TomatoIcon from "../assets/tomato4.png";
+import LeavesIcon from "../assets/leaves.png";
 
 export default function LoginPage() {
 
@@ -44,8 +45,8 @@ export default function LoginPage() {
     <div className="tomacus-body">
         <div className='tomacus-container'>
             <div className='image-container'>
-                <img className='tomato-image' src='src/assets/tomato4.png'></img>
-                <img className='leaves-image' src='src/assets/leaves.png'></img>
+                <img className='tomato-image' src={TomatoIcon}></img>
+                <img className='leaves-image' src={LeavesIcon}></img>
             </div>
             <h1>TOMACUS</h1>
             <h2>Login</h2>
