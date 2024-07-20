@@ -11,21 +11,26 @@
 import {useEffect, useRef, useState} from "react";
 import {FaEllipsisV} from 'react-icons/fa';
 import '../css/ScheduleCard.css';
+import {Link, useNavigate} from "react-router-dom";
+import {doc, getDoc, onSnapshot} from "firebase/firestore";
+import {Database} from "../firebase/firebase.config.js";
+import {deletePomodoroSchedule} from "../services/ScheduleServices.js";
 
-export default function ScheduleCard() {
+export default function ScheduleCard({ID = 'id'}) {
 
     const card = useRef();
+    const [id, setId] = useState(ID);
     const [showOptions, setShowOptions] = useState(false);
     const [name, setName] = useState('Schedule Title');
-    const [workTime, setWorkTime] = useState('mm:ss');
-    const [breakTime, setBreakTime] = useState('mm:ss');
+    const [description, setDescription] = useState('Schedule Description');
+
+    const navigate = useNavigate();
 
     function handleCardClick(event) {
         // TODO: Implement handleCardClick
         event.stopPropagation();
-        console.log(`Clicked on card: ${name}, Work time: ${workTime}, Break Time: ${breakTime}`);
-        onCardClick({name, workTime, breakTime})
-
+        console.log(`Clicked on card: ${name}`);
+        navigate(`/dashboard/schedule/${id}`);
     }
 
     //When user clicks the kebab icon it will show the edit and delete 
@@ -38,23 +43,36 @@ export default function ScheduleCard() {
     function handleEditClick(event){
         event.stopPropagation();
         setShowOptions(false);
-        onEdit({name, workTime, breakTime})
+        navigate(`/dashboard/schedule/edit/${id}`);
     }
 
     //When user clicks delete it will delete the users entry
-    function handleDeleteClick(event){
+    async function handleDeleteClick(event){
         event.stopPropagation();
         setShowOptions(false);
-        onDelete({name, workTime, breakTime})
+        await deletePomodoroSchedule(id);
     }
 
     // SUBJECT TO CHANGE
-    useEffect(() => {
+    useEffect( () => {
         // TODO: Implement useEffect hook.
         // Whenever there are possible changes in schedule data.
-        console.log('Schedule data Changed:', {name, workTime, breakTime}); 
-        
-    }, [name, workTime, breakTime])
+
+        async function fetchData() {
+            if (ID !== 'id' || ID === null) {
+                const q = doc(Database, 'schedules', id)
+
+                await onSnapshot(q, docSnap => {
+                    const data = docSnap.data();
+
+                    setName(data.name);
+                    setDescription(data.description)
+                });
+            }
+        }
+
+        fetchData();
+    }, [])
 
     return (
         <div ref={card} className="schedule-card" onClick={handleCardClick}>
@@ -62,7 +80,7 @@ export default function ScheduleCard() {
                 <div className="card-row">
                     {/* [SECTION] Schedule name */}
                     <div className="col">
-                        <div className="schedule-title">
+                        <div className="schedule-title" onClick={handleCardClick}>
                             {name}
                         </div>
                     </div>
@@ -80,10 +98,7 @@ export default function ScheduleCard() {
                 </div>
                 <div className="row">
                     <div className="col work-time">
-                        {workTime}
-                    </div>
-                    <div className="col break-time">
-                        {breakTime}
+                        {description}
                     </div>
                 </div>
             </div>
